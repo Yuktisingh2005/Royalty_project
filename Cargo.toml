@@ -1,0 +1,20 @@
+[package]
+name = "decentralized_music_royalties"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+blockchain-sdk = "0.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[features]
+default = []
+
+[lib]
+name = "royalty"
+path = "src/royalty.rs"
+crate-type = ["cdylib", "rlib"]
+
+[profile.release]
+opt-level = "z"  # Optimize for size
